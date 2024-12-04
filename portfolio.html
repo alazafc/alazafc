@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="img.icon" href="img/weblogo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlazaFC</title>
+    <style>
+        img {
+            width: 100px;
+            height: 75px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 1000;
+            background: none;
+            border: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 50%;
+                border-radius: 5px;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .nav-links a {
+                color: white;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">AlazaFC</a></div>
+            <img src="img/logo.png">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <h1>Our Projects</h1>
+        <div class="project-gallery">
+            <div class="project">
+                <img src="img/web.png" style="height: 300px;" alt="HTML">
+                <h3>Web/App Development</h3>
+            </div>
+            <div class="project">
+                <img src="img/game.png" style="height: 300px;" alt="CSS">
+                <h3>Game Development</h3>
+            </div>
+            <div class="project">
+                <img src="img/3dmodel.jpg" style="height: 300px;" alt="JAVA">
+                <h3>3D Modelling</h3>
+            </div>
+            <div class="project">
+                <img src="img/vfx.jpg" style="height: 300px;" alt="JAVA">
+                <h3>VFX/SFX</h3>
+            </div>
+            <div class="project">
+                <img src="img/video.jpg" style="height: 300px;" alt="JAVA">
+                <h3>Video Editing</h3>
+            </div>
+            <div class="project">
+                <img src="img/poster.jpg" style="height: 300px;" alt="JAVA">
+                <h3>Photo Editing</h3>
+            </div>
+        </div>
+    </section>
+
+  <!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>☎️Contact: +94 77 996 996 7  🖁  +94 76 675 658 2</p>
+        <p>📍Address: 159, Muslim College Road, Jaffna</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <img src="img/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <img src="img/twitter.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <img src="img/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                <img src="img/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+
+            navLinks.classList.toggle('active');
+
+            if (navLinks.classList.contains('active')) {
+                menuToggle.textContent = '✖';
+            } else {
+                menuToggle.textContent = '☰';
+            }
+        }
+    </script>
+</body>
+</html>
