@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="img.icon" href="img/weblogo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlazaFC</title>
+    <style>
+        img {
+            width: 100px;
+            height: 75px;
+        }
+
+        /* Menu toggle button styling */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 1000;
+            background: none;
+            border: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #ffffff;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 50%;
+                border-radius: 5px;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .nav-links a {
+                color: white;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">AlazaFC</a></div>
+            <img src="img/logo.png">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <h1>About Our Company</h1>
+        <p>Welcome to Alaza, a creative powerhouse at the forefront of digital innovation. Our company thrives on delivering cutting-edge solutions across a spectrum of services, including web development, game development, app development, video editing, photo editing, 3D modeling and VFX/SFX.</p>
+
+        <p>At Alaza, we believe in transforming ideas into reality. With a team of skilled professionals and a passion for technology, we craft visually stunning and functional projects tailored to meet our clients' unique needs. Whether it's producing cinematic-quality visuals, building immersive 3D models, or developing intuitive applications, we ensure excellence in every detail.</p>
+        
+        <p>Driven by creativity and a commitment to quality, we aim to empower businesses and individuals with tools and solutions that inspire and make an impact. From innovative web and game designs to breathtaking visual effects, Alaza is your partner in shaping the future of digital experiences.</p>
+        
+        <p><strong>Our Vision:</strong><br>
+        To lead the industry as a hub for innovation and creativity, delivering transformative solutions that redefine possibilities in the digital space.</p>
+        
+        <p><strong>Our Mission:</strong><br>
+        To provide exceptional services that combine artistry and technology, helping our clients stand out and achieve their goals with confidence.</p>
+        
+        <p>Let us bring your vision to life—because at Alaza, creativity has no limits.</p>
+    </section>
+
+   <!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>☎️Contact: +94 77 996 996 7  🖁  +94 76 675 658 2</p>
+        <p>📍Address: 159, Muslim College Road, Jaffna</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <img src="img/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <img src="img/twitter.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <img src="img/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                <img src="img/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            navLinks.classList.toggle('active');
+
+            // Toggle button text
+            if (navLinks.classList.contains('active')) {
+                menuToggle.textContent = '✖';
+            } else {
+                menuToggle.textContent = '☰';
+            }
+        }
+    </script>
+</body>
+</html>
